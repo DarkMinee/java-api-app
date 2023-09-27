@@ -1,0 +1,33 @@
+
+entity Classroom {
+	number Integer
+    section String
+    desc String
+}
+
+entity Student {
+	name String
+    surname String
+    date String
+}
+
+entity Task {
+	date String
+    subject Subject
+    grade Integer min(1) max(10)
+}
+
+entity StudentTask {}
+
+enum Subject {
+    STORIA, ITALIANO, INGLESE, MATEMATICA
+}
+
+relationship ManyToMany {
+	Student to StudentTask
+    Task to StudentTask
+}
+
+relationship ManyToOne {
+	Student to Classroom
+}

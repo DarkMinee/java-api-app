@@ -1,0 +1,30 @@
+{
+  "applications": "*",
+  "changelogDate": "20230927123954",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "student_task",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "StudentTask",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "student",
+      "otherEntityRelationshipName": "studentTask",
+      "ownerSide": false,
+      "relationshipName": "student",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "task",
+      "otherEntityRelationshipName": "studentTask",
+      "ownerSide": false,
+      "relationshipName": "task",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no"
+}

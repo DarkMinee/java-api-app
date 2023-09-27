@@ -1,0 +1,27 @@
+{
+  "javaApiApp": {
+    "classroom": {
+      "home": {
+        "title": "Classrooms",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Genera un nuovo Classroom",
+        "createOrEditLabel": "Genera o modifica un Classroom",
+        "notFound": "No Classrooms found"
+      },
+      "created": "&Egrave; stato generato un nuovo Classroom con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Classroom identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Classroom con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Classroom {{ id }}?"
+      },
+      "detail": {
+        "title": "Classroom"
+      },
+      "id": "ID",
+      "number": "Number",
+      "section": "Section",
+      "desc": "Desc",
+      "student": "Student"
+    }
+  }
+}

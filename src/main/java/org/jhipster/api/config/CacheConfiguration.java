@@ -48,6 +48,17 @@ public class CacheConfiguration {
             createCache(cm, org.jhipster.api.domain.User.class.getName());
             createCache(cm, org.jhipster.api.domain.Authority.class.getName());
             createCache(cm, org.jhipster.api.domain.User.class.getName() + ".authorities");
+            createCache(cm, org.jhipster.api.domain.Classroom.class.getName());
+            createCache(cm, org.jhipster.api.domain.Classroom.class.getName() + ".students");
+            createCache(cm, org.jhipster.api.domain.Student.class.getName());
+            createCache(cm, org.jhipster.api.domain.Student.class.getName() + ".tasks");
+            createCache(cm, org.jhipster.api.domain.Task.class.getName());
+            createCache(cm, org.jhipster.api.domain.Task.class.getName() + ".students");
+            createCache(cm, org.jhipster.api.domain.Student.class.getName() + ".studentTasks");
+            createCache(cm, org.jhipster.api.domain.Task.class.getName() + ".studentTasks");
+            createCache(cm, org.jhipster.api.domain.StudentTask.class.getName());
+            createCache(cm, org.jhipster.api.domain.StudentTask.class.getName() + ".students");
+            createCache(cm, org.jhipster.api.domain.StudentTask.class.getName() + ".tasks");
             // jhipster-needle-ehcache-add-entry
         };
     }

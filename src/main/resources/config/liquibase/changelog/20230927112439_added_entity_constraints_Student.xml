@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity Student.
+    -->
+    <changeSet id="20230927112439-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="classroom_id"
+                                 baseTableName="student"
+                                 constraintName="fk_student__classroom_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="classroom"/>
+
+        <addForeignKeyConstraint baseColumnNames="student_id"
+                                 baseTableName="rel_student__student_task"
+                                 constraintName="fk_rel_student__student_task__student_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="student"/>
+
+        <addForeignKeyConstraint baseColumnNames="student_task_id"
+                                 baseTableName="rel_student__student_task"
+                                 constraintName="fk_rel_student__student_task__student_task_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="student_task"/>
+    </changeSet>
+</databaseChangeLog>

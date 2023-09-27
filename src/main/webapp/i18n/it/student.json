@@ -1,0 +1,28 @@
+{
+  "javaApiApp": {
+    "student": {
+      "home": {
+        "title": "Students",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Genera un nuovo Student",
+        "createOrEditLabel": "Genera o modifica un Student",
+        "notFound": "No Students found"
+      },
+      "created": "&Egrave; stato generato un nuovo Student con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Student identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Student con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Student {{ id }}?"
+      },
+      "detail": {
+        "title": "Student"
+      },
+      "id": "ID",
+      "name": "Name",
+      "surname": "Surname",
+      "date": "Date",
+      "classroom": "Classroom",
+      "studentTask": "Student Task"
+    }
+  }
+}

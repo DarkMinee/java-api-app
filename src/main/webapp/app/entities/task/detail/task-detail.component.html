@@ -1,0 +1,47 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="task">
+      <h2 data-cy="taskDetailsHeading"><span jhiTranslate="javaApiApp.task.detail.title">Task</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ task.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="javaApiApp.task.date">Date</span></dt>
+        <dd>
+          <span>{{ task.date }}</span>
+        </dd>
+        <dt><span jhiTranslate="javaApiApp.task.subject">Subject</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'javaApiApp.Subject.' + task.subject }}">{{ task.subject }}</span>
+        </dd>
+        <dt><span jhiTranslate="javaApiApp.task.grade">Grade</span></dt>
+        <dd>
+          <span>{{ task.grade }}</span>
+        </dd>
+        <dt><span jhiTranslate="javaApiApp.task.studentTask">Student Task</span></dt>
+        <dd>
+          <span *ngFor="let studentTask of task.studentTasks; let last = last">
+            <a [routerLink]="['/student-task', studentTask.id, 'view']">{{ studentTask.id }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Indietro</span>
+      </button>
+
+      <button type="button" [routerLink]="['/task', task.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Modifica</span>
+      </button>
+    </div>
+  </div>
+</div>

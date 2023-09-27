@@ -1,0 +1,11 @@
+{
+  "javaApiApp": {
+    "Subject": {
+      "null": "",
+      "STORIA": "STORIA",
+      "ITALIANO": "ITALIANO",
+      "INGLESE": "INGLESE",
+      "MATEMATICA": "MATEMATICA"
+    }
+  }
+}

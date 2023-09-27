@@ -1,0 +1,9 @@
+export enum Subject {
+  STORIA = 'STORIA',
+
+  ITALIANO = 'ITALIANO',
+
+  INGLESE = 'INGLESE',
+
+  MATEMATICA = 'MATEMATICA',
+}

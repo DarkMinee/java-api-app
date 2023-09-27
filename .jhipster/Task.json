@@ -1,0 +1,40 @@
+{
+  "applications": "*",
+  "changelogDate": "20230927112440",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "task",
+  "fields": [
+    {
+      "fieldName": "date",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "subject",
+      "fieldType": "Subject",
+      "fieldValues": "STORIA,ITALIANO,INGLESE,MATEMATICA"
+    },
+    {
+      "fieldName": "grade",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["min", "max"],
+      "fieldValidateRulesMax": "10",
+      "fieldValidateRulesMin": "1"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Task",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "studentTask",
+      "otherEntityRelationshipName": "task",
+      "ownerSide": true,
+      "relationshipName": "studentTask",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no"
+}

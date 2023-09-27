@@ -1,0 +1,25 @@
+{
+  "javaApiApp": {
+    "studentTask": {
+      "home": {
+        "title": "StudentTasks",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Genera un nuovo Student Task",
+        "createOrEditLabel": "Genera o modifica un Student Task",
+        "notFound": "No Student Tasks found"
+      },
+      "created": "&Egrave; stato generato un nuovo Student Task con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Student Task identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Student Task con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Student Task {{ id }}?"
+      },
+      "detail": {
+        "title": "Student Task"
+      },
+      "id": "ID",
+      "student": "Student",
+      "task": "Task"
+    }
+  }
+}

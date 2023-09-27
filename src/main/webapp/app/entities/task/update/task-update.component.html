@@ -1,0 +1,90 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-task-heading" data-cy="TaskCreateUpdateHeading" jhiTranslate="javaApiApp.task.home.createOrEditLabel">
+        Genera o modifica un Task
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="javaApiApp.task.date" for="field_date">Date</label>
+          <input type="text" class="form-control" name="date" id="field_date" data-cy="date" formControlName="date" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="javaApiApp.task.subject" for="field_subject">Subject</label>
+          <select class="form-control" name="subject" formControlName="subject" id="field_subject" data-cy="subject">
+            <option [ngValue]="null">{{ 'javaApiApp.Subject.null' | translate }}</option>
+            <option *ngFor="let subject of subjectValues" [value]="subject">{{ 'javaApiApp.Subject.' + subject | translate }}</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="javaApiApp.task.grade" for="field_grade">Grade</label>
+          <input type="number" class="form-control" name="grade" id="field_grade" data-cy="grade" formControlName="grade" />
+          <div *ngIf="editForm.get('grade')!.invalid && (editForm.get('grade')!.dirty || editForm.get('grade')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('grade')?.errors?.min"
+              jhiTranslate="entity.validation.min"
+              [translateValues]="{ min: 1 }"
+            >
+              Questo campo dovrebbe essere più di 1.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('grade')?.errors?.max"
+              jhiTranslate="entity.validation.max"
+              [translateValues]="{ max: 10 }"
+            >
+              Questo campo non può essere superiore a 10.
+            </small>
+            <small class="form-text text-danger" [hidden]="!editForm.get('grade')?.errors?.number" jhiTranslate="entity.validation.number">
+              Questo campo dovrebbe essere un numero.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label jhiTranslate="javaApiApp.task.studentTask" for="field_studentTasks">Student Task</label>
+          <select
+            class="form-control"
+            id="field_studentTasks"
+            data-cy="studentTask"
+            multiple
+            name="studentTasks"
+            formControlName="studentTasks"
+            [compareWith]="compareStudentTask"
+          >
+            <option [ngValue]="studentTaskOption" *ngFor="let studentTaskOption of studentTasksSharedCollection">
+              {{ studentTaskOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Annulla</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Salva</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
