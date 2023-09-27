@@ -4,6 +4,8 @@ Applicazione generata utilizzando JHipster 7.9.4 che simula la struttura di una 
 
 ## Sviluppo
 
+- NOTA: La definizione delle entità si trova all'interno del file jhipster-jdl.jdl nella root directory del progetto
+
 E' necessario installare node js ed eseguire nella cartella del progetto il comando
 
 ```
